@@ -21,6 +21,18 @@
 int make_server_socket(int portnum);
 int make_server_socket_q(int portnum, int backlog);
 int connect_to_server(char *host, int portnum);
+int read_til_crnl(FILE *fp);
+int process_rq( char *rq, int fd );
+int header( FILE *fp, char *content_type );
+int cannot_do(int fd);
+int do_404(char *item, int fd);
+int isadir(char *f);
+int not_exist(char *f);
+int do_ls(char *dir, int fd);
+char * file_type(char *f);
+int ends_in_cgi(char *f);
+int do_cat(char *f, int fd);
+int do_exec( char *prog, int fd );
 
 
 
